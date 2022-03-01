@@ -16,8 +16,10 @@ RUN wget https://dlcdn.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tg
 RUN tar zxvf spark-3.2.1-bin-hadoop3.2.tgz
 RUN mv spark-3.2.1-bin-hadoop3.2 /opt/spark
 RUN rm -rf ./spark-3.2.1-bin-hadoop3.2.tgz
-RUN echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
-RUN echo "export PATH=$PATH:/opt/spark/bin:/opt/spark/sbin" >> ~/.bashrc
 
 RUN useradd -ms /bin/bash dev
 USER dev
+RUN echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
+RUN echo "export PATH=$PATH:/opt/spark/bin:/opt/spark/sbin" >> ~/.bashrc
+
+
